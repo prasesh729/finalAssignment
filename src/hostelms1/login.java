@@ -30,6 +30,7 @@ public class login implements ActionListener{
 		f=new JFrame("Login");
 		f.getContentPane().setFont(new Font("Arial", Font.PLAIN, 18));
 
+		//-----------------------------------------------------title lbl---------------------------------
 	    title_lbl=new JLabel("LOGIN PAGE");
 	    title_lbl.setFont(new Font("Arial", Font.BOLD, 30));
 	    title_lbl.setBounds(172, 21, 209, 80);
@@ -46,7 +47,8 @@ public class login implements ActionListener{
 	    pswd_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    pswd_lbl.setBounds(69, 226, 132, 44);
 	    f.getContentPane().add(pswd_lbl);
-	    
+
+//--------------------------------------------------------------text field--------------------------------------------------------- 
 	    uname_TF = new JTextField();
 	    uname_TF.setFont(new Font("Arial", Font.PLAIN, 20));
 	    uname_TF.setBounds(226, 134, 226, 44);
