@@ -237,7 +237,62 @@ public class adashboard implements ActionListener {
 	    f.setVisible(true);		
 	}
 
-
+	@Override
+	public void actionPerformed(ActionEvent e) {
+	    String fname = fname_tf.getText();
+        String lname = lname_tf.getText();
+        String uname = uname_tf.getText();
+        String age = age_tf.getText();
+        String gender = gender_cbox.getSelectedItem().toString();;
+        String contact = contact_tf.getText();
+        String address = address_tf.getText();
+        
+       
+        
+        if (e.getSource() == delete_btn) {
+            Dao sdc= new Dao();
+            String query = "delete from userdetails where username = '"+uname+"' ";
+            int val= sdc.insert(query);
+            if (val>0) {
+                JOptionPane.showMessageDialog(f,"Data Deleted Successflly");   
+                ((DefaultTableModel)table.getModel()).setNumRows(0);
+                fname_tf.setText("");
+        		lname_tf.setText("");
+        		uname_tf.setText("");
+        		age_tf.setText("");
+        		gender_cbox.setToolTipText("");
+        		contact_tf.setText("");
+        		address_tf.setText("");
+            }
+            else {
+                JOptionPane.showMessageDialog(f, "Failed to Delete the data");
+            }
+        }
+        
+        
+      
+       
+        if (e.getSource() == update_btn) {
+            Dao sdc= new Dao();
+            String query =" update userdetails set firstname = '"+fname+"', lastname='"+lname+"',username='"+uname+"',age='"+age+"',gender='"+gender+"',contact_no='"+contact+"',address='"+address+"' where username ='"+uname+"' ";
+            int val= sdc.insert(query);
+            if (val>0) {
+                JOptionPane.showMessageDialog(f,"Data Updated Successflly");
+                ((DefaultTableModel)table.getModel()).setNumRows(0);
+                fname_tf.setText("");
+        		lname_tf.setText("");
+        		uname_tf.setText("");
+        		age_tf.setText("");
+        		gender_cbox.setToolTipText("");
+        		contact_tf.setText("");
+        		address_tf.setText("");
+            }
+            else {
+                JOptionPane.showMessageDialog(f, "Failed to Update data");
+            }
+        }
+		
+	}
 	
 }	
 
