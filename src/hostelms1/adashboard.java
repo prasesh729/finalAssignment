@@ -269,7 +269,16 @@ public class adashboard implements ActionListener {
             }
         }
         
-        
+        if (e.getSource() == clear_btn) {
+        	fname_tf.setText("");
+		lname_tf.setText("");
+		uname_tf.setText("");
+		age_tf.setText("");
+		gender_cbox.setToolTipText("");
+		contact_tf.setText("");
+		address_tf.setText("");
+        ((DefaultTableModel)table.getModel()).setNumRows(0);
+        }
       
        
         if (e.getSource() == update_btn) {
