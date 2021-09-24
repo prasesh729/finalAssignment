@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 
-public class aregister implements ActionListener{
+public class adduser implements ActionListener{
 
 	JFrame f;
 	JLabel title_lbl;
@@ -25,24 +25,22 @@ public class aregister implements ActionListener{
 	 
 	
 	public static void main(String[] args) {
-		new aregister();
+		new adduser();
 
 	}
 
 
-	public aregister() {
+	public adduser() {
 		f=new JFrame("");
-
-	    title_lbl=new JLabel("REGISTER");
+	    title_lbl=new JLabel("USER");
 	    title_lbl.setFont(new Font("Arial", Font.BOLD, 26));
 	    title_lbl.setBounds(279, 10, 152, 80);
 	   
 	    f.getContentPane().add(title_lbl);
 	    f.setSize(669, 744);
 	    f.getContentPane().setLayout(null);
-	
-	    
-	//---------------------------------------------------------------label----------------------------------------------------------
+		    
+	//---------------------------------------------------------------LABEL----------------------------------------------------------
 	    JLabel fname_lbl = new JLabel("First Name :");
 	    fname_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    fname_lbl.setBounds(85, 97, 130, 39);
@@ -89,8 +87,8 @@ public class aregister implements ActionListener{
 	    f.getContentPane().add(lname_lbl);
 	    
 	    
-	 //-------------------------------------------------------------------------Fields --------------------------------------------------------   
-	   
+	 //----------------------------------------------------------TEXT FIELDS AND COMBO BOX --------------------------------------------------------   
+	  	    
 	    fname_tf= new JTextField();
 	    fname_tf.setFont(new Font("Arial", Font.PLAIN, 20));
 	    fname_tf.setBounds(283, 97, 274, 39);
@@ -143,8 +141,8 @@ public class aregister implements ActionListener{
 	    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    f.setVisible(true);
 	 
-	    //-------------------------BUTTON-------------------------------
-	    register_btn = new JButton("Register");
+	    //--------------------------------------------------BUTTON-----------------------------------------------------	    
+	    register_btn = new JButton("ADD");
 	    register_btn.setFont(new Font("Arial", Font.PLAIN, 20));
 	    register_btn.setBounds(279, 637, 152, 47);
 	    register_btn.addActionListener(this);
@@ -158,13 +156,10 @@ public class aregister implements ActionListener{
 	    		
 	}
 
-
-
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		//-----------------------------------------------------------------------CLEAR BTN FUNCTION-----------------------------------------------------------------------------	
+		//------------------------------------------------CLEAR BTN FUNCTION-----------------------------------------------------------------	
 		if(e.getSource() == clear_btn){
 			fname_tf.setText("");
 			lname_tf.setText("");
@@ -178,7 +173,7 @@ public class aregister implements ActionListener{
 		}
 		
 		
-		//-----------------------------------------------------------------------REGITSER BTN FUNCTION-----------------------------------------------------------------------
+		//----------------------------------------------------------ADDUSER BTN FUNCTION----------------------------------------------------------------------
 			
 		if(e.getSource() == register_btn){
 			String fname = fname_tf.getText();
@@ -215,14 +210,11 @@ public class aregister implements ActionListener{
             	JOptionPane.showMessageDialog(f, "Password cannot be empty");
             }
             
-                       
        else {
     	    
             String fpswd = pswd_f.getText();
-			String spswd = cpswd_f.getText();
-			
-			if (fpswd.equals(spswd)){
-				   
+			String spswd = cpswd_f.getText();			
+			if (fpswd.equals(spswd)){				   
 				   st.setString(1, fname);
 		 			st.setString(2, lname);
 		 			st.setString(3, uname);
@@ -233,20 +225,19 @@ public class aregister implements ActionListener{
 		 	 		st.setString(8, pswd);
 		 	 		st.setString(9, cpswd);
 					int ct = st.executeUpdate();
-				if (ct > 0) {
+									
+					if (ct > 0) {
 					JOptionPane.showMessageDialog(f, "You have successfully registered");
 					f.dispose();
-					new login();
 					}
 					
 					else {
 					JOptionPane.showMessageDialog(f, "Plz again register");
-
 					}
 				}
 			
 			else {
-				JOptionPane.showMessageDialog(f, "Password doesnotmatch ");
+				JOptionPane.showMessageDialog(f, "Password doesnot match ");
 			}	
 	  }		
 }			
@@ -255,10 +246,5 @@ public class aregister implements ActionListener{
 			}
 		}
 				
-	}	
-	
-	
-
-				
-	
+	}		
 }

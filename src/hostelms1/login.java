@@ -89,7 +89,7 @@ public class login implements ActionListener{
 			if (rs.next()) {
 			JOptionPane.showMessageDialog(f, "You have successfully logged in");
 			f.dispose();
-			new adashboard1();
+			new adashboard();
 			}
 			
 			else {
