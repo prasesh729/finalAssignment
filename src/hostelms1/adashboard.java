@@ -443,7 +443,29 @@ public class adashboard implements ActionListener {
         ((DefaultTableModel)profile_table.getModel()).setNumRows(0);
         }
       
-
+        //-------------------------------------------------PROFILE UPDATE BTN FUNCTION------------------------------------------------------ 
+        if (e.getSource() == update_btn) {
+            Dao sdc= new Dao();
+            String query =" update userdetails set firstname = '"+fname+"', lastname='"+lname+"',username='"+uname+"',age='"+age+"',gender='"+gender+"',contact_no='"+contact+"',address='"+address+"' where username ='"+uname+"' ";
+            int val= sdc.insert(query);
+            if (val>0) {
+                JOptionPane.showMessageDialog(f,"Data Updated Successflly");
+                ((DefaultTableModel)profile_table.getModel()).setNumRows(0);
+                fname_tf.setText("");
+        		lname_tf.setText("");
+        		uname_tf.setText("");
+        		age_tf.setText("");
+        		gender_cbox.setToolTipText("");
+        		contact_tf.setText("");
+        		address_tf.setText("");
+            }
+            else {
+                JOptionPane.showMessageDialog(f, "Failed to Update data");
+            }
+        }
+        
+        
+        
     	
 	}
 }
