@@ -464,7 +464,70 @@ public class adashboard implements ActionListener {
             }
         }
         
+//---------------------------------------------ROOM  ADD BUTTON FUNCTION------------------------------------------------------  
         
+        String r_no = rno_tf.getText();
+		String rstatus = roomstatus_cbox.getSelectedItem().toString();
+		String rtype = rtype_cbox.getSelectedItem().toString();
+		String rfloor = rfloor_tf.getText();
+		String rfee = rfee_tf.getText();
+        
+    	if(e.getSource() == Radd_room_btn){
+			try {
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hostelms", "root", "Tha@chaina729");
+            PreparedStatement st = connection.prepareStatement("Insert into room_details values (?,?,? ,?,?)");
+                 	   
+            if (r_no.equals("")) {
+				JOptionPane.showMessageDialog(f, "Room No cannot be empty");
+			}
+           		
+			else {
+				st.setString(1, r_no);
+	 			st.setString(2, rstatus);
+	 			st.setString(3, rtype);
+	 	 	    st.setString(4, rfloor);
+	 	 	    st.setString( 5,rfee); 	
+				int ct = st.executeUpdate();
+						
+		    if (ct > 0) {
+				JOptionPane.showMessageDialog(f, "You have successfully added the room");
+				rno_tf.setText("");
+				roomstatus_cbox.setToolTipText("");
+				rtype_cbox.setToolTipText("");
+				rfloor_tf.setText("");
+				rfee_tf.setText("");				
+				}
+				
+				else {
+				JOptionPane.showMessageDialog(f, "Plz add again");
+                   	}   
+				}  
+            }
+					
+			catch (SQLException sqlException) {
+			sqlException.printStackTrace();
+			}
+	     }
+    	
+    	//---------------------------------------------ROOM  DELETE BUTTON FUNCTION------------------------------------------------------ 
+    	   if (e.getSource() == Rdelete_btn) {
+               Dao dc= new Dao();
+               String query = "delete from room_details where room_no = '"+r_no+"' ";
+               int val= dc.insert(query);
+               if (val>0) {
+                   JOptionPane.showMessageDialog(f,"Data Deleted Successflly");   
+                   ((DefaultTableModel)roomtable.getModel()).setNumRows(0);
+                   rno_tf.setText("");
+   				   roomstatus_cbox.setToolTipText("");
+   				   rtype_cbox.setToolTipText("");
+   				   rfloor_tf.setText("");
+   				   rfee_tf.setText("");    
+               }
+               
+               else {
+                   JOptionPane.showMessageDialog(f, "Failed to Delete the data");
+               }
+           }     
         
     	
 	}
