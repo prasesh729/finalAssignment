@@ -337,7 +337,25 @@ public class adashboard implements ActionListener {
 	    room_spane.setViewportView(roomtable);
 	    
 	    	    
-	  //--------------------------------------------------------ROOMS BUTTON AND VIEW ALL ROOMS FUNCTION------------------------------------------------------------- 
+	  //--------------------------------------------------------ROOMS WINDOWS BUTTON AND VIEW ALL ROOMS FUNCTION------------------------------------------------------------- 
+	    Rdelete_btn = new JButton("DELETE");
+	    Rdelete_btn.addActionListener(this);
+	    Rdelete_btn.setBounds(317, 482, 291, 56);
+	    Rdelete_btn.setFont(new Font("Arial", Font.PLAIN, 20));
+	    viewRoom_panel.add(Rdelete_btn);
+	    
+	    Radd_room_btn = new JButton("ADD ROOM");
+	    Radd_room_btn.addActionListener(this);
+	    Radd_room_btn.setFont(new Font("Arial", Font.PLAIN, 20));
+	    Radd_room_btn.setBounds(258, 520, 155, 56);
+	    Room_lpane.add(Radd_room_btn);
+	    
+	    Rupdate_btn = new JButton("UPDATE");
+	    Rupdate_btn.setFont(new Font("Arial", Font.PLAIN, 20));
+	    Rupdate_btn.setBounds(419, 520, 150, 56);
+	    Rupdate_btn.addActionListener(this);
+	    Room_lpane.add(Rupdate_btn);
+	    
 	    JButton roomdetails_btn = new JButton("VIEW ALL ROOMS ");
 	    roomdetails_btn.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
@@ -370,25 +388,7 @@ public class adashboard implements ActionListener {
 	    roomdetails_btn.setBounds(10, 482, 297, 56);
 	    roomdetails_btn.setFont(new Font("Arial", Font.PLAIN, 20));
 	    viewRoom_panel.add(roomdetails_btn);
-	    	   
-	    Rdelete_btn = new JButton("DELETE");
-	    Rdelete_btn.addActionListener(this);
-	    Rdelete_btn.setBounds(317, 482, 291, 56);
-	    Rdelete_btn.setFont(new Font("Arial", Font.PLAIN, 20));
-	    viewRoom_panel.add(Rdelete_btn);
-	    
-	    Radd_room_btn = new JButton("ADD ROOM");
-	    Radd_room_btn.addActionListener(this);
-	    Radd_room_btn.setFont(new Font("Arial", Font.PLAIN, 20));
-	    Radd_room_btn.setBounds(258, 520, 155, 56);
-	    Room_lpane.add(Radd_room_btn);
-	    
-	    Rupdate_btn = new JButton("UPDATE");
-	    Rupdate_btn.setFont(new Font("Arial", Font.PLAIN, 20));
-	    Rupdate_btn.setBounds(419, 520, 150, 56);
-	    Rupdate_btn.addActionListener(this);
-	    Room_lpane.add(Rupdate_btn);
-	    	   	  
+	    	   	    	    	   	  
 	    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    f.setVisible(true);		
 	}

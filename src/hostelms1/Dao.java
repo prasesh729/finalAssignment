@@ -26,7 +26,7 @@ public class Dao {
 	    
 
 
-	//------------------------------------------ INSERTING QUERY -----------------------------------------------------
+	//------------------------------------------ INSERT QUERY -----------------------------------------------------
 	    public int insert(String query) {    
 	        try {
 	            ans = st.executeUpdate(query);
@@ -39,7 +39,7 @@ public class Dao {
 	    
 	    
 	    
-	//------------------------------------------- SELECTING QUERY -------------------------------------------------------    
+	//------------------------------------------- SELECT QUERY -------------------------------------------------------    
 	    public ResultSet select(String query) {
 	        try {
 	            rows = st.executeQuery(query);
@@ -51,8 +51,6 @@ public class Dao {
 	        
 	    }
 	
-
-	 
 
 	    public static void main(String[] args) {
 	        new Dao();

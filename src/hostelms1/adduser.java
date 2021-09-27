@@ -155,6 +155,8 @@ public class adduser implements ActionListener{
 	    f.getContentPane().add(clear_btn);
 	    		
 	}
+	
+	//---------------------------------------------------BUTTON FUNCTION------------------------------------------------------
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
