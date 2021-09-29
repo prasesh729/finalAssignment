@@ -29,9 +29,8 @@ public class adashboard implements ActionListener {
     JTextField rno_tf,rfloor_tf,rfee_tf;
     JTable roomtable;
     JLabel rtype_lbl, rfee_lbl,roomS_lbl,rfloor_lbl, room_lbl;
-
-   
-    
+    JLabel hostel_bgimg,Room_bgimg;
+         
 	public static void main(String[] args) {
 		new adashboard();
 
@@ -41,7 +40,8 @@ public class adashboard implements ActionListener {
 	public adashboard() {
 		//---------------------------------------------------------NEW WINDOW OR FRAME CREATED---------------------------------------------------
 		f=new JFrame("Hostel");		
-		title_lbl=new JLabel("HOSTEL MANAGEMNET SYSTEM");
+		title_lbl=new JLabel("HOSTEL MANAGEMENT SYSTEM");
+		title_lbl.setForeground(Color.ORANGE);
 		title_lbl.setFont(new Font("Arial", Font.BOLD, 36));
 	    title_lbl.setBounds(429, 27, 603, 80);
 	    	    
@@ -59,38 +59,46 @@ public class adashboard implements ActionListener {
 	    Profile_lpane = new JLayeredPane();
 	    mainf_tpane.addTab("Profile", null, Profile_lpane, null);
 	    
-	    //-------------------------------------------------------------------PROFILE LABEL---------------------------------------------
+	    //---------------------------------------------PROFILE LABEL---------------------------------------------
 	    JLabel fname_lbl = new JLabel("First Name :");
+	    fname_lbl.setForeground(Color.WHITE);
+	    fname_lbl.setBackground(Color.BLACK);
 	    fname_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    fname_lbl.setBounds(71, 44, 130, 39);
 	    Profile_lpane.add(fname_lbl);
 	    
 	    JLabel lname_lbl = new JLabel("Last Name :");
+	    lname_lbl.setForeground(Color.WHITE);
 	    lname_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    lname_lbl.setBounds(71, 118, 130, 39);
 	    Profile_lpane.add(lname_lbl);
 	    
 	    JLabel uname_lbl = new JLabel("User Name :");
+	    uname_lbl.setForeground(Color.WHITE);
 	    uname_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    uname_lbl.setBounds(71, 191, 130, 39);
 	    Profile_lpane.add(uname_lbl);
 	    
 	    JLabel gender_lbl = new JLabel("Gender :");
+	    gender_lbl.setForeground(Color.WHITE);
 	    gender_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    gender_lbl.setBounds(71, 329, 130, 39);
 	    Profile_lpane.add(gender_lbl);
 	    
 	    JLabel age_lbl = new JLabel("Age :");
+	    age_lbl.setForeground(Color.WHITE);
 	    age_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    age_lbl.setBounds(71, 265, 130, 39);
 	    Profile_lpane.add(age_lbl);
 	    
 	    JLabel contact_lbl = new JLabel("Contact No :");
+	    contact_lbl.setForeground(Color.WHITE);
 	    contact_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    contact_lbl.setBounds(71, 394, 130, 39);
 	    Profile_lpane.add(contact_lbl);
 	    
 	    JLabel address_lbl = new JLabel("Address :");
+	    address_lbl.setForeground(Color.WHITE);
 	    address_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    address_lbl.setBounds(71, 459, 130, 39);
 	    Profile_lpane.add(address_lbl);
@@ -236,6 +244,11 @@ public class adashboard implements ActionListener {
 	    });  
 	    viewdetails_btn.setBounds(10, 466, 297, 56);
 	    viewUD_panel.add(viewdetails_btn);
+	    
+	    JLabel dashboard_bgimg = new JLabel("");
+	    dashboard_bgimg.setIcon(new ImageIcon("D:\\hostel_bg (1).jpg"));
+	    dashboard_bgimg.setBounds(0, 0, 1292, 601);
+	    Profile_lpane.add(dashboard_bgimg);
 	    	    	   
 	    
 	    //---------------------------------------------ROOM WINDOW TEXT FIELD AND COMBO BOX-----------------------------------------------
@@ -275,26 +288,31 @@ public class adashboard implements ActionListener {
 	    
 	    //--------------------------------------------------ROOM LABEL--------------------------------------------
 	    room_lbl = new JLabel("Room No :");
+	    room_lbl.setForeground(Color.WHITE);
 	    room_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    room_lbl.setBounds(81, 40, 125, 47);
 	    Room_lpane.add(room_lbl);
 	    
 	    roomS_lbl = new JLabel("Room Status :");
+	    roomS_lbl.setForeground(Color.WHITE);
 	    roomS_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    roomS_lbl.setBounds(81, 140, 150, 47);
 	    Room_lpane.add(roomS_lbl);
 	    
 	    rfloor_lbl = new JLabel("Floor :");
+	    rfloor_lbl.setForeground(Color.WHITE);
 	    rfloor_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    rfloor_lbl.setBounds(81, 331, 150, 47);
 	    Room_lpane.add(rfloor_lbl);
 	    
 	    rtype_lbl = new JLabel("Type :");
+	    rtype_lbl.setForeground(Color.WHITE);
 	    rtype_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    rtype_lbl.setBounds(81, 241, 150, 47);
 	    Room_lpane.add(rtype_lbl);
 	    
 	    rfee_lbl = new JLabel("Fee :");
+	    rfee_lbl.setForeground(Color.WHITE);
 	    rfee_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    rfee_lbl.setBounds(81, 430, 150, 47);
 	    Room_lpane.add(rfee_lbl);
@@ -388,6 +406,16 @@ public class adashboard implements ActionListener {
 	    roomdetails_btn.setBounds(10, 482, 297, 56);
 	    roomdetails_btn.setFont(new Font("Arial", Font.PLAIN, 20));
 	    viewRoom_panel.add(roomdetails_btn);
+	    
+	    Room_bgimg = new JLabel("");
+	    Room_bgimg.setIcon(new ImageIcon("D:\\hostel_bg (1).jpg"));
+	    Room_bgimg.setBounds(0, 0, 1292, 601);
+	    Room_lpane.add(Room_bgimg);
+	    
+	    hostel_bgimg = new JLabel("bg");
+	    hostel_bgimg.setIcon(new ImageIcon("D:\\hostel_bg (1).jpg"));
+	    hostel_bgimg.setBounds(0, 0, 1386, 792);
+	    f.getContentPane().add(hostel_bgimg);
 	    	   	    	    	   	  
 	    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    f.setVisible(true);		

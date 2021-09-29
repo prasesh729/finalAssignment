@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import javax.swing.*;
 
 import javax.swing.JFrame;
+import java.awt.Color;
 
 public class login implements ActionListener{
 
@@ -32,6 +33,7 @@ public class login implements ActionListener{
 
 		//-----------------------------------------------------title lbl---------------------------------
 	    title_lbl=new JLabel("LOGIN PAGE");
+	    title_lbl.setForeground(Color.WHITE);
 	    title_lbl.setFont(new Font("Arial", Font.BOLD, 30));
 	    title_lbl.setBounds(172, 21, 209, 80);
 	    f.getContentPane().add(title_lbl);
@@ -39,17 +41,20 @@ public class login implements ActionListener{
 	    f.getContentPane().setLayout(null);
 	    
 	    JLabel uname = new JLabel("Username :-");
+	    uname.setForeground(Color.WHITE);
 	    uname.setFont(new Font("Arial", Font.PLAIN, 20));
 	    uname.setBounds(69, 128, 132, 49);
 	    f.getContentPane().add(uname);
 	    
 	    JLabel pswd_lbl = new JLabel("Password :-");
+	    pswd_lbl.setForeground(Color.WHITE);
 	    pswd_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    pswd_lbl.setBounds(69, 226, 132, 44);
 	    f.getContentPane().add(pswd_lbl);
 
 //--------------------------------------------------------------text field--------------------------------------------------------- 
 	    uname_TF = new JTextField();
+	    uname_TF.setForeground(Color.BLACK);
 	    uname_TF.setFont(new Font("Arial", Font.PLAIN, 20));
 	    uname_TF.setBounds(226, 134, 226, 44);
 	    f.getContentPane().add(uname_TF);
@@ -65,10 +70,15 @@ public class login implements ActionListener{
 	    pswd_F.setFont(new Font("Arial", Font.PLAIN, 20));
 	    pswd_F.setBounds(226, 227, 226, 43);
 	    f.getContentPane().add(pswd_F);
+	    
+	    JLabel login_bg_image = new JLabel("");
+	    login_bg_image.setBackground(Color.WHITE);
+	    login_bg_image.setIcon(new ImageIcon("D:\\lhostel_bg (1).jpg"));
+	    login_bg_image.setBounds(0, 0, 538, 451);
+	    f.getContentPane().add(login_bg_image);
 	    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    f.setVisible(true);
-	    
-		
+	    		
 	}
 
 //-------------------------------------------------------------login btn fucntion------------------------------------------------------------

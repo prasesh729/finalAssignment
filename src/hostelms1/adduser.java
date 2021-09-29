@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class adduser implements ActionListener{
 
@@ -22,6 +23,7 @@ public class adduser implements ActionListener{
 	JButton register_btn, clear_btn;
 	JPasswordField pswd_f,cpswd_f;
 	JComboBox gender_cbox;
+	JLabel adduser_bg;
 	 
 	
 	public static void main(String[] args) {
@@ -33,6 +35,7 @@ public class adduser implements ActionListener{
 	public adduser() {
 		f=new JFrame("");
 	    title_lbl=new JLabel("USER");
+	    title_lbl.setForeground(Color.WHITE);
 	    title_lbl.setFont(new Font("Arial", Font.BOLD, 26));
 	    title_lbl.setBounds(279, 10, 152, 80);
 	   
@@ -42,46 +45,55 @@ public class adduser implements ActionListener{
 		    
 	//---------------------------------------------------------------LABEL----------------------------------------------------------
 	    JLabel fname_lbl = new JLabel("First Name :");
+	    fname_lbl.setForeground(Color.WHITE);
 	    fname_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    fname_lbl.setBounds(85, 97, 130, 39);
 	    f.getContentPane().add(fname_lbl);
 	    
 	    JLabel uname_lbl = new JLabel("User Name :");
+	    uname_lbl.setForeground(Color.WHITE);
 	    uname_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    uname_lbl.setBounds(85, 217, 130, 39);
 	    f.getContentPane().add(uname_lbl);
 	    
 	    JLabel gender_lbl = new JLabel("Gender :");
+	    gender_lbl.setForeground(Color.WHITE);
 	    gender_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    gender_lbl.setBounds(85, 275, 130, 39);
 	    f.getContentPane().add(gender_lbl);
 	    
 	    JLabel age_lbl = new JLabel("Age :");
+	    age_lbl.setForeground(Color.WHITE);
 	    age_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    age_lbl.setBounds(85, 333, 130, 39);
 	    f.getContentPane().add(age_lbl);
 	    
 	    JLabel contact_lbl = new JLabel("Contact No :");
+	    contact_lbl.setForeground(Color.WHITE);
 	    contact_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    contact_lbl.setBounds(85, 395, 130, 39);
 	    f.getContentPane().add(contact_lbl);
 	    
 	    JLabel address_lbl = new JLabel("Address :");
+	    address_lbl.setForeground(Color.WHITE);
 	    address_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    address_lbl.setBounds(85, 454, 130, 39);
 	    f.getContentPane().add(address_lbl);
 	    
 	    JLabel pswd_lbl = new JLabel("Password :");
+	    pswd_lbl.setForeground(Color.WHITE);
 	    pswd_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    pswd_lbl.setBounds(85, 513, 130, 39);
 	    f.getContentPane().add(pswd_lbl);
 	    
 	    JLabel cpswd_lbl = new JLabel("Confirm Password :");
+	    cpswd_lbl.setForeground(Color.WHITE);
 	    cpswd_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    cpswd_lbl.setBounds(85, 569, 198, 39);
 	    f.getContentPane().add(cpswd_lbl);
 	    
 	    JLabel lname_lbl = new JLabel("Last Name :");
+	    lname_lbl.setForeground(Color.WHITE);
 	    lname_lbl.setFont(new Font("Arial", Font.PLAIN, 20));
 	    lname_lbl.setBounds(85, 156, 130, 39);
 	    f.getContentPane().add(lname_lbl);
@@ -153,6 +165,11 @@ public class adduser implements ActionListener{
 	    clear_btn.setBounds(441, 637, 115, 47);
 	    clear_btn.addActionListener(this);
 	    f.getContentPane().add(clear_btn);
+	    
+	    adduser_bg = new JLabel("");
+	    adduser_bg.setIcon(new ImageIcon("D:\\lhostel_bg (2).jpg"));
+	    adduser_bg.setBounds(0, 0, 655, 707);
+	    f.getContentPane().add(adduser_bg);
 	    		
 	}
 	

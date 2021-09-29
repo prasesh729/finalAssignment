@@ -22,10 +22,7 @@ public class Dao {
 	            e.printStackTrace();
 	        }    
 	    }
-	    
-	    
-
-
+	    	    
 	//------------------------------------------ INSERT QUERY -----------------------------------------------------
 	    public int insert(String query) {    
 	        try {
@@ -36,9 +33,7 @@ public class Dao {
 	        return ans;
 	        }
 	
-	    
-	    
-	    
+	    	    	    
 	//------------------------------------------- SELECT QUERY -------------------------------------------------------    
 	    public ResultSet select(String query) {
 	        try {

@@ -11,8 +11,7 @@ public class login_class {
 		if(username == username && password == password) {
 			result = true;			
 		}
-		
-		
+				
 		return result;
 	}
 
