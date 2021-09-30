@@ -73,7 +73,7 @@ public class login implements ActionListener{
 	    
 	    JLabel login_bg_image = new JLabel("");
 	    login_bg_image.setBackground(Color.WHITE);
-	    login_bg_image.setIcon(new ImageIcon("D:\\lhostel_bg (1).jpg"));
+	    login_bg_image.setIcon(new ImageIcon("images/lhostel_bg (1).jpg"));
 	    login_bg_image.setBounds(0, 0, 538, 451);
 	    f.getContentPane().add(login_bg_image);
 	    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

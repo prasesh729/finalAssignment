@@ -167,7 +167,7 @@ public class adduser implements ActionListener{
 	    f.getContentPane().add(clear_btn);
 	    
 	    adduser_bg = new JLabel("");
-	    adduser_bg.setIcon(new ImageIcon("D:\\lhostel_bg (2).jpg"));
+	    adduser_bg.setIcon(new ImageIcon("images/lhostel_bg (2).jpg"));
 	    adduser_bg.setBounds(0, 0, 655, 707);
 	    f.getContentPane().add(adduser_bg);
 	    		

@@ -7,15 +7,15 @@ import org.junit.jupiter.api.Test;
 //import testing.register_test_class;
 
 class register_classTest extends register_class{
-	/*
+	
 	@Test
 	// testing class not null
 	public void testConstructor() {
 		register_class rtc = new register_class();
 		assertNotNull(rtc);
 	}
-	*/
-	/*@Test
+	
+	@Test
 	// Register inserting test pass
 	public void testGetters() {
 		register_class rt = new register_class("prasesh","dangol","prash","12", "male","23423","kathmandu","123","123");
@@ -24,7 +24,7 @@ class register_classTest extends register_class{
 		
 		assertEquals(expected,actual);
 	}
-	*/
+	
 	    @Test
 	    // Register inserting test fail
 		public void testGetters1() {

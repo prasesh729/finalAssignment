@@ -246,7 +246,7 @@ public class adashboard implements ActionListener {
 	    viewUD_panel.add(viewdetails_btn);
 	    
 	    JLabel dashboard_bgimg = new JLabel("");
-	    dashboard_bgimg.setIcon(new ImageIcon("D:\\hostel_bg (1).jpg"));
+	    dashboard_bgimg.setIcon(new ImageIcon("images/test.jpg"));
 	    dashboard_bgimg.setBounds(0, 0, 1292, 601);
 	    Profile_lpane.add(dashboard_bgimg);
 	    	    	   
@@ -408,12 +408,12 @@ public class adashboard implements ActionListener {
 	    viewRoom_panel.add(roomdetails_btn);
 	    
 	    Room_bgimg = new JLabel("");
-	    Room_bgimg.setIcon(new ImageIcon("D:\\hostel_bg (1).jpg"));
+	    Room_bgimg.setIcon(new ImageIcon("images/test.jpg"));
 	    Room_bgimg.setBounds(0, 0, 1292, 601);
 	    Room_lpane.add(Room_bgimg);
 	    
 	    hostel_bgimg = new JLabel("bg");
-	    hostel_bgimg.setIcon(new ImageIcon("D:\\hostel_bg (1).jpg"));
+	    hostel_bgimg.setIcon(new ImageIcon("images/test.jpg"));
 	    hostel_bgimg.setBounds(0, 0, 1386, 792);
 	    f.getContentPane().add(hostel_bgimg);
 	    	   	    	    	   	  
@@ -471,26 +471,7 @@ public class adashboard implements ActionListener {
         ((DefaultTableModel)profile_table.getModel()).setNumRows(0);
         }
       
-        //-------------------------------------------------PROFILE UPDATE BTN FUNCTION------------------------------------------------------ 
-        if (e.getSource() == update_btn) {
-            Dao sdc= new Dao();
-            String query =" update userdetails set firstname = '"+fname+"', lastname='"+lname+"',username='"+uname+"',age='"+age+"',gender='"+gender+"',contact_no='"+contact+"',address='"+address+"' where username ='"+uname+"' ";
-            int val= sdc.insert(query);
-            if (val>0) {
-                JOptionPane.showMessageDialog(f,"Data Updated Successflly");
-                ((DefaultTableModel)profile_table.getModel()).setNumRows(0);
-                fname_tf.setText("");
-        		lname_tf.setText("");
-        		uname_tf.setText("");
-        		age_tf.setText("");
-        		gender_cbox.setToolTipText("");
-        		contact_tf.setText("");
-        		address_tf.setText("");
-            }
-            else {
-                JOptionPane.showMessageDialog(f, "Failed to Update data");
-            }
-        }
+      
         
 //---------------------------------------------ROOM  ADD BUTTON FUNCTION------------------------------------------------------  
         
@@ -536,6 +517,48 @@ public class adashboard implements ActionListener {
 			sqlException.printStackTrace();
 			}
 	     }
+    	
+    	//-------------------------------------------------ROOM UPDATE BTN FUNCTION------------------------------------------------------ 
+        if (e.getSource() == Rupdate_btn) {
+            Dao sdc= new Dao();
+            String query =" update room_details set room_no = '"+r_no+"', room_status='"+rstatus+"',type='"+rtype+"',floor='"+rfloor+"',fee='"+rfee+"' where room_no ='"+r_no+"' ";
+            int val= sdc.insert(query);
+            if (val>0) {
+                JOptionPane.showMessageDialog(f,"Data Updated Successflly");
+                ((DefaultTableModel)profile_table.getModel()).setNumRows(0);
+                rno_tf.setText("");
+				   roomstatus_cbox.setToolTipText("");
+				   rtype_cbox.setToolTipText("");
+				   rfloor_tf.setText("");
+				   rfee_tf.setText("");    
+            }
+            else {
+                JOptionPane.showMessageDialog(f, "Failed to Update data");
+            }
+        }
+    	
+    	//---------------------------------------------PROFILE  UPDATE BUTTON FUNCTION------------------------------------------------------ 
+    	
+    	if (e.getSource() == update_btn) {
+            Dao sdc= new Dao();
+            String query =" update userdetails set firstname = '"+fname+"', lastname='"+lname+"',username='"+uname+"',age='"+age+"',gender='"+gender+"',contact_no='"+contact+"',address='"+address+"' where username ='"+uname+"' ";
+            int val= sdc.insert(query);
+            if (val>0) {
+                JOptionPane.showMessageDialog(f,"Data Updated Successflly");
+                ((DefaultTableModel)profile_table.getModel()).setNumRows(0);
+                fname_tf.setText("");
+        		lname_tf.setText("");
+        		uname_tf.setText("");
+        		age_tf.setText("");
+        		gender_cbox.setToolTipText("");
+        		contact_tf.setText("");
+        		address_tf.setText("");
+            }
+            else {
+                JOptionPane.showMessageDialog(f, "Failed to Update data");
+            }
+        }
+    	
     	
     	//---------------------------------------------ROOM  DELETE BUTTON FUNCTION------------------------------------------------------ 
     	   if (e.getSource() == Rdelete_btn) {
