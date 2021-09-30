@@ -16,38 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `userdetails`
+-- Table structure for table `admin_details`
 --
 
-DROP TABLE IF EXISTS `userdetails`;
+DROP TABLE IF EXISTS `admin_details`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `userdetails` (
-  `firstname` varchar(45) NOT NULL,
-  `lastname` varchar(45) DEFAULT NULL,
+CREATE TABLE `admin_details` (
   `username` varchar(45) NOT NULL,
-  `age` varchar(45) NOT NULL,
-  `gender` varchar(45) NOT NULL,
-  `contact_no` varchar(45) NOT NULL,
-  `address` varchar(45) DEFAULT NULL,
   `password` varchar(45) NOT NULL,
-  `cpassword` varchar(45) NOT NULL,
   PRIMARY KEY (`username`),
-  UNIQUE KEY `username_UNIQUE` (`username`),
-  UNIQUE KEY `password_UNIQUE` (`password`),
-  UNIQUE KEY `cpassword_UNIQUE` (`cpassword`),
-  UNIQUE KEY `contact_no_UNIQUE` (`contact_no`)
+  UNIQUE KEY `password_UNIQUE` (`password`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `userdetails`
+-- Dumping data for table `admin_details`
 --
 
-LOCK TABLES `userdetails` WRITE;
-/*!40000 ALTER TABLE `userdetails` DISABLE KEYS */;
-INSERT INTO `userdetails` VALUES ('hello','dangol','123@usser','57','Female','32432432','lalpur','1234','1234'),('ramy','dangol','user123','50','Female','98797546','32423','123','123');
-/*!40000 ALTER TABLE `userdetails` ENABLE KEYS */;
+LOCK TABLES `admin_details` WRITE;
+/*!40000 ALTER TABLE `admin_details` DISABLE KEYS */;
+INSERT INTO `admin_details` VALUES ('admin','admin'),('admin123','admin123');
+/*!40000 ALTER TABLE `admin_details` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -59,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-30 16:07:15
+-- Dump completed on 2021-09-30 16:34:38

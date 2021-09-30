@@ -90,7 +90,7 @@ public class login implements ActionListener{
 			String pswd = pswd_F.getText();
 			try {		
 			Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/hostelms", "root", "Tha@chaina729");
-            PreparedStatement st = (PreparedStatement) con.prepareStatement("Select username, password from userdetails where username=? and password=?");
+            PreparedStatement st = (PreparedStatement) con.prepareStatement("Select username, password from admin_details where username=? and password=?");
 
 			st.setString(1, uname);
 			st.setString(2, pswd);
